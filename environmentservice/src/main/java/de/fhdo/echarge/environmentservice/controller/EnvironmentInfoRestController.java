@@ -79,6 +79,4 @@ public class EnvironmentInfoRestController {
         environmentInfoService.deleteEnvironmentInfo(id);
         return id;
     }
-
-
 }
