@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div id ="chargingPointPageText">
+				<p>Sie befinden sich auf der Charging Point Seite</p>
+				<p>Bitte registrieren Sie ihre Ladestation</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div id="createChargingPoint">
+					<div th:switch="${chargingPoints}">
+    					<h2 th:case="null">Zurzeit sind keine Ladestationen vorhanden!</h2>
+					        <div th:case="*">
+					            <h2>Ladestationen</h2>
+					            <table>
+					                <thead>
+					                    <tr>
+					                        <th>Name</th>
+					                        <th>Besitzer</th>
+					                        <th>Straße</th>
+					                        <th>Hausnummer</th>
+					                        <th>Stadt</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                <tr th:each="chargingPoint : ${chargingPoints}">
+					                    <td th:text="${chargingPoint.Name}"></td>
+					                    <td th:text="${chargingPoint.ownerId}"></td>
+					                    <td th:text="${chargingPoint.location.street}"></td>
+					                    <td th:text="${chargingPoint.location.streetNumber}"></td>
+					                    <td th:text="${chargingPoint.location.city}"></td>
+				                     	<td><a th:href="@{/chargingPoints/delete/{id}(id=${chargingPoint.id})}">Ladestation löschen</a></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					    </div>      
+    					<p><a href="/chargingPoints/register">Neue Ladestation hinzufügen</a></p>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
