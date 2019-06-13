@@ -5,6 +5,22 @@
 	</head>
 	<body>
 		<div class="container">
+		
+			<div class="row">
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="#">PACS</a>
+				    </div>
+				    <ul class="nav navbar-nav">
+				      <li class="active"><a href="http://localhost:8083/">UserManagement</a></li>
+				      <li><a href="http://localhost:8081/" target="_blank">ChargingPoint</a></li>
+				      <li><a href="http://localhost:8082/" target="_blank">Environment</a></li>
+				    </ul>
+				  </div>
+				</nav>
+			</div>
+			
 			<div class="row">
 				<div id ="welcomeText">
 				<p>Herzlich Willkommen auf der Seite vom Park and Charge System.</p>
@@ -17,7 +33,7 @@
 					<div th:switch="${users}">
     					<h2 th:case="null">Zurzeit sind keine Benutzer registriert!</h2>
 					        <div th:case="*">
-					            <h2>Users</h2>
+					            <h2>Benutzer</h2>
 					            <table>
 					                <thead>
 					                    <tr>
@@ -41,10 +57,6 @@
 				</div>
 			</div>
 			
-			<div class="row">
-			<p><a href="http://localhost:8081/" target="_blank">ChargingPoint</a></p>
-			<p><a href="http://localhost:8082/" target="_blank">Environment</a></p>
-			</div>
 		</div>
 	</body>
 </html>
