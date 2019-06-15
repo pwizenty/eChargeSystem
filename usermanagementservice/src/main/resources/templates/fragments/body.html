@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="container">
+		
+			<div class="row">
+				<esi:include src="/common/navbar-1.0" />
+			</div>
+			
+			<div class="row">
+				<div id ="welcomeText">
+				<p>Herzlich Willkommen auf der Seite vom Park and Charge System.</p>
+				<p>Damit Sie das System nutzen können, müssen Sie sich im System registrieren.</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div id="createUser">
+					<div th:switch="${users}">
+    					<h2 th:case="null">Zurzeit sind keine Benutzer registriert!</h2>
+					        <div th:case="*">
+					            <h2>Benutzer</h2>
+					            <table>
+					                <thead>
+					                    <tr>
+					                        <th>Vorname</th>
+					                        <th>Nachname</th>
+					                        <th>E-Mail</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                <tr th:each="user : ${users}">
+					                    <td th:text="${user.firstName}"></td>
+					                    <td th:text="${user.lastName}"></td>
+					                    <td th:text="${user.email}"></td>
+				                     	<td><a th:href="@{/users/delete/{id}(id=${user.id})}">Löschen</a></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					    </div>      
+    					<p><a href="/users/register">Neuen Benutzer hinzufügen</a></p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
