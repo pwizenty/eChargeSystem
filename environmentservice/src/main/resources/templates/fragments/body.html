@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="container">
+		
+			<div class="row">
+				<nav class="navbar navbar-default">
+				  <div class="container-fluid">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="#">PACS</a>
+				    </div>
+				    <ul class="nav navbar-nav">
+				      <li><a href="http://localhost:8080/" target="_blank">UserManagement</a></li>
+				      <li><a href="http://localhost:8081/" target="_blank">ChargingPoint</a></li>
+				      <li class="active"><a href="http://localhost:8082/">Environment</a></li>
+				    </ul>
+				  </div>
+				</nav>
+			</div>
+		
+			<div class="row">
+				<div id ="environmentInfoText">
+				<p>Sie befinden sich auf der Seite der Umeweltinformationen</p>
+				<p>Bitte ergänzen Sie die Umweltinformationen</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div id="createEnvironmentInfo">
+					<div th:switch="${environmentInfos}">
+    					<h2 th:case="null">Zurzeit sind keine Umweltinformationen vorhanden!</h2>
+					        <div th:case="*">
+					            <h2>Umweltinformationen</h2>
+					            <table>
+					                <thead>
+					                    <tr>
+					                        <th>SensorId</th>
+					                        <th>SensorType</th>
+					                    </tr>
+					                </thead>
+					                <tbody>
+					                <tr th:each="environmentInfo : ${environmentInfos}">
+					                    <td th:text="${environmentInfo.sensorId}"></td>
+					                    <td th:text="${environmentInfo.sensorType}"></td>
+				                     	<td><a th:href="@{/environmentInfos/delete/{id}(id=${environmentInfo.id})}">Umweltinformation löschen</a></td>
+					                </tr>
+					            </tbody>
+					        </table>
+					    </div>      
+    					<p><a href="/environmentInfos/register">Neue Umweltinformation hinzufügen</a></p>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>
