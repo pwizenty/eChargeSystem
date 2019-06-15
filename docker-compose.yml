@@ -1,0 +1,36 @@
+version: '3'
+services:
+    mongo-db:
+        image: mongo:latest
+        ports:
+        - "27017:27017"
+        command: --smallfiles
+    user-management:
+        build: ./usermanagementservice .
+        ports:
+        - "8083:8080"
+        links:
+        - mongo-db
+    charging-point:
+        build: ./chargingpointservice .
+        ports:
+        - "8081:8081"
+        links:
+        - mongo-db
+    environment-info:
+        build: ./environmentservice .
+        ports: 
+        - "8082:8082"
+        links:
+        - mongo-db
+    common:
+        build: ./commonElementsService .
+    varnish:
+        build: varnish
+        ports:
+        - "8080:8080"
+        links:
+        - user-management
+        - common
+        
+        
