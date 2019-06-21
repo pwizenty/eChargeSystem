@@ -1,0 +1,20 @@
+<div id="usersList" class="card-body">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Vorname</th>
+        <th scope="col">Nachname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Entfernen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td><button class="btn btn-danger" (click)="deleteUser(user)">Benutzer löschen</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
