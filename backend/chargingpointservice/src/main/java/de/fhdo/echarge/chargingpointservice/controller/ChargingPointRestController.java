@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "/resources/v1/chargingpointinterface", produces = "application/json")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ChargingPointRestController {
     private ChargingPointService chargingPointService;
     private static final Logger LOGGER = LoggerFactory.getLogger(ChargingPointRestController.class);
@@ -26,7 +26,7 @@ public class ChargingPointRestController {
      *
      * @return list of all available ChargingPoints
      */
-    @GetMapping(value = "/")
+    @GetMapping(value="/chargingPoints")
     public List<ChargingPoint> getAllChargingPoint() {
         LOGGER.info("Method: getChargingPoint");
         return chargingPointService.readAllChargingPoints();
@@ -38,7 +38,7 @@ public class ChargingPointRestController {
      * @param chargingPoint ChargingPoint
      * @return persisted chargingPoint
      */
-    @PutMapping(value = "/")
+    @PostMapping(value="/chargingPoints")
     public ChargingPoint createChargingPoint(@RequestBody ChargingPoint chargingPoint) {
         LOGGER.info("Method: createChargingPoint");
         return chargingPointService.createChargingPoint(chargingPoint);
@@ -62,7 +62,7 @@ public class ChargingPointRestController {
      * @param id of a ChargingPoint
      * @return requested chargingPoint with the corresponding id
      */
-    @GetMapping(value = "/id/{id}")
+    @GetMapping(value = "/chargingPoints/{id}")
     public ChargingPoint getChargingPoint(@PathVariable String id) {
         LOGGER.info("Method: getChargingPoint");
         return chargingPointService.readChargingPoint(id);
@@ -74,7 +74,7 @@ public class ChargingPointRestController {
      * @param id of a ChargingPoint
      * @return TRUE/FALSE based on the success of the delete operation
      */
-    @DeleteMapping(value = "/id/{id}")
+    @DeleteMapping(value = "/chargingPoints/{id}")
     public boolean deleteChargingPoint(@PathVariable String id) {
         LOGGER.info("Method: deleteChargingPoint");
         return chargingPointService.deleteChargingPoint(id);

@@ -9,10 +9,10 @@ import java.util.List;
 public class ChargingPoint {
     @Id
     private String id;
-    private String Name;
+    private String name;
     private Location location;
     private String description;
-    private String ownerId;
+    private String ownerid;
     private String chargingType;
     private String plugType;
     private boolean offered;
@@ -34,10 +34,10 @@ public class ChargingPoint {
                          List<BookingEntry> bookedAt,
                          List<UsageHistory> usageHistories, double consumedEnergyInKWh, boolean activated,
                          boolean blocked, boolean inUse) {
-        Name = name;
+        this.name = name;
         this.location = location;
         this.description = description;
-        this.ownerId = ownerId;
+        this.ownerid = ownerId;
         this.chargingType = chargingType;
         this.plugType = plugType;
         this.offered = offered;
@@ -60,11 +60,11 @@ public class ChargingPoint {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public Location getLocation() {
@@ -83,12 +83,12 @@ public class ChargingPoint {
         this.description = description;
     }
 
-    public String getOwnerId() {
-        return ownerId;
+    public String getOwnerid() {
+        return ownerid;
     }
 
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+    public void setOwnerid(String ownerId) {
+        this.ownerid = ownerId;
     }
 
     public String getChargingType() {
@@ -186,10 +186,10 @@ public class ChargingPoint {
     public String toString() {
         return "ChargingPoint{" +
                 "id='" + id + '\'' +
-                ", Name='" + Name + '\'' +
+                ", Name='" + name + '\'' +
                 ", location=" + location +
                 ", description='" + description + '\'' +
-                ", ownerId='" + ownerId + '\'' +
+                ", ownerId='" + ownerid + '\'' +
                 ", chargingType='" + chargingType + '\'' +
                 ", plugType='" + plugType + '\'' +
                 ", offered=" + offered +
