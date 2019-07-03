@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-class Create extends Component {
+class Create extends React.Component {
 
   constructor() {
     super();

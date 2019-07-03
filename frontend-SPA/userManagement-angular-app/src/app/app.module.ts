@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -24,4 +25,24 @@ import { UserService } from './service/user-service';
   providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap(): void {
+
+    const { injector } = this;
+
+        // create custom elements from angular components
+        const ngCustomAppComponent = createCustomElement(AppComponent, { injector });
+        const ngCustomUserListComponent = createCustomElement(UserListComponent, {injector});
+        const ngUserFormComponent = createCustomElement(UserFormComponent, {injector});
+
+
+        // define in browser registry
+        customElements.define('ng-el', ngCustomAppComponent);
+        customElements.define('ng-el-list', ngCustomUserListComponent);
+        customElements.define('ng-el-form', ngUserFormComponent);
+
+  }
+}

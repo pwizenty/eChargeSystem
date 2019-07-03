@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
+import './App.css';
 import Create from './components/Create';
 import 'bootstrap/dist/css/bootstrap.css';
 
-class ReactElement extends HTMLElement {
+class CreateElement extends HTMLElement {
 
   constructor() {
     super();
@@ -17,9 +15,6 @@ class ReactElement extends HTMLElement {
   connectedCallback() {
     this._innerHTML = this.innerHTML;
     this.mount();
-    ReactDOM.render(<Router><div><Route exact path='/' component={App} /><Route path='/create' component={Create} /></div></Router>,
-      document.getElementById('root')
-    );
   }
 
   disconnectedCallback() {
@@ -32,14 +27,14 @@ class ReactElement extends HTMLElement {
     this.mount();
   }
   mount() {
-    const propTypes = App.propTypes ? App.propTypes : {};
-    const events = App.propTypes ? App.propTypes : {};
+    const propTypes = Create.propTypes ? Create.propTypes : {};
+    const events = Create.propTypes ? Create.propTypes : {};
     const props = {
       ...this.getProps(this.attributes, propTypes),
       ...this.getEvents(events),
       children: this.parseHtmlToReact(this.innerHTML)
     };
-    render(<App {...props} />, this);
+    render(<Create {...props} />, this);
   }
 
   unmount() {
@@ -85,4 +80,4 @@ class ReactElement extends HTMLElement {
     };
   }
 }
-customElements.define('react-el', ReactElement);
+customElements.define('react-el-create', CreateElement);

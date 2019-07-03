@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from 'reactstrap';
 
-class App extends Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
