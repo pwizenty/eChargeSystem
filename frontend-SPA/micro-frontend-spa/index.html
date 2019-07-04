@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<base href="/">
 <meta charset="UTF-8">
   <title>Micro-frontends using Web Components</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
@@ -47,7 +48,6 @@
       reactElContainer.appendChild(reactEl);
 	  reactElContainer.appendChild(reactElCreate);
 
-      const ngEl = document.createElement('ng-el');
 	  const ngElList = document.createElement('ng-el-list');
 	  const ngElForm = document.createElement('ng-el-form');
 
@@ -55,7 +55,6 @@
       if (ngElContainer.children.length > 0) {
         ngElContainer.removeChild(ngElContainer.children[0]);
       }
-      ngElContainer.appendChild(ngEl);
 	  ngElContainer.appendChild(ngElList);
 	  ngElContainer.appendChild(ngElForm);
 
@@ -64,7 +63,6 @@
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
-  <script src="http://localhost:5001/main.js"></script>
-  <script src="http://localhost:5002/main.js"></script>
+  <script src="./dist/userManagement-angular-app/main.js"></script>
 	
 </body>
