@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render, unmountComponentAtNode , ReactDOM} from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import App from './App'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
 import Create from './components/Create';
 import 'bootstrap/dist/css/bootstrap.css';
+import htmlToReact from 'html-to-react';
 
 class ReactElement extends HTMLElement {
 
@@ -32,11 +33,8 @@ class ReactElement extends HTMLElement {
     this.mount();
   }
   mount() {
-    const propTypes = App.propTypes ? App.propTypes : {};
-    const events = App.propTypes ? App.propTypes : {};
     const props = {
-      ...this.getProps(this.attributes, propTypes),
-      ...this.getEvents(events),
+      ...this.getProps(this.attributes),
       children: this.parseHtmlToReact(this.innerHTML)
     };
     render(<App {...props} />, this);

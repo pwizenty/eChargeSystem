@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from 'reactstrap';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -53,8 +54,8 @@ class App extends React.Component {
             </div>
 
             <div className="panel-body">
-              <h4><Link to="/create"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true">
-                </span> Ladestation hinzufügen</Link></h4>
+              <h4><Router><Link to="/create"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true">
+                </span> Ladestation hinzufügen</Link></Router></h4>
               <table className="table table-bordered table-striped">
                 <thead>
                   <tr>

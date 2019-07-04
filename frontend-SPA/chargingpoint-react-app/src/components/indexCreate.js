@@ -1,8 +1,10 @@
 import React from 'react';
+import { render, unmountComponentAtNode } from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Create from './components/Create';
 import 'bootstrap/dist/css/bootstrap.css';
+import htmlToReact from 'html-to-react';
 
 class CreateElement extends HTMLElement {
 
@@ -27,11 +29,8 @@ class CreateElement extends HTMLElement {
     this.mount();
   }
   mount() {
-    const propTypes = Create.propTypes ? Create.propTypes : {};
-    const events = Create.propTypes ? Create.propTypes : {};
     const props = {
-      ...this.getProps(this.attributes, propTypes),
-      ...this.getEvents(events),
+      ...this.getProps(this.attributes),
       children: this.parseHtmlToReact(this.innerHTML)
     };
     render(<Create {...props} />, this);
