@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button } from 'reactstrap';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ReactWebComponent from 'react-web-component';
+import Create from './Create';
 
 class App extends React.Component {
 
@@ -40,7 +40,7 @@ class App extends React.Component {
       <div id="homePage">
 
         <div className="jumbotron text-center" >
-          <h2>PACS - Charging Point</h2>
+          <h4>PACS - Charging Point</h4>
         </div>
 
         <div className="container">
@@ -54,8 +54,6 @@ class App extends React.Component {
             </div>
 
             <div className="panel-body">
-              <h4><Router><Link to="/create"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true">
-                </span> Ladestation hinzufügen</Link></Router></h4>
               <table className="table table-bordered table-striped">
                 <thead>
                   <tr>
@@ -69,7 +67,7 @@ class App extends React.Component {
                     <tr>
                       <td>{c.name}</td>
                       <td>{c.ownerid}</td>
-                      <td><Button color="danger" onClick={() => this.deleteChargingPoint(c.id)}>Delete</Button></td>
+                      <td><Button color="danger" onClick={() => this.deleteChargingPoint(c.id)}>Löschen</Button></td>
                     </tr>
                   )}
                 </tbody>
@@ -84,5 +82,5 @@ class App extends React.Component {
     );
   }
 }
-
+ReactWebComponent.create(<App />, 'chargingpoint-home');
 export default App;

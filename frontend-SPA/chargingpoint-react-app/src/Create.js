@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router';
+import ReactWebComponent from 'react-web-component';
 
 class Create extends React.Component {
-
   constructor() {
     super();
     this.state = {
       name: '',
-      ownerid: '',
-      toHome: false
+      ownerid: ''
     };
   }
   onChange = (e) => {
@@ -26,43 +23,38 @@ class Create extends React.Component {
 
     axios.post('http://localhost:8081/chargingPoints', { name, ownerid})
     .then(() => this.setState(() => ({
-      toHome: true
     })))
+
+    this.refreshPage();
+  }
+
+  refreshPage(){
+    window.location.reload();
   }
 
   render() {
     const { name, ownerid} = this.state;
 
-    if (this.state.toHome === true) {
-      return <Redirect to='/' />
-    }
-
     return (
-
       <div id="createComplete">
-      <div className="jumbotron text-center">
-        <h2>Park and Charge System  - Charging Point</h2>
-        <h3>Bitte einen neuen ChargingPoint hinzufügen</h3>
-      </div>
       <div className="container">
         <div className="panel panel-default">
           <div className="panel-heading">
             <h3 className="panel-title">
-              ADD Charging Point
+              Ladestation hinzufügen
             </h3>
           </div>
           <div className="panel-body">
-            <h4><Link to="/"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Charging Point List</Link></h4>
-            <form onSubmit={this.onSubmit}>
+            <form>
               <div className="form-group">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Name der Ladestation:</label>
                 <input type="text" className="form-control" name="name" value={name} onChange={this.onChange} placeholder="Name" />
               </div>
               <div className="form-group">
                 <label htmlFor="ownerid">Besitzer:</label>
                 <input type="text" className="form-control" name="ownerid" value={ownerid} onChange={this.onChange} placeholder="Besitzer" />
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="submit" className="btn btn-info" onClick={this.onSubmit}>Hinzufügen</button>
             </form>
           </div>
         </div>
@@ -71,5 +63,5 @@ class Create extends React.Component {
     );
   }
 }
-
+ReactWebComponent.create(<Create />, 'chargingpoint-create');
 export default Create;

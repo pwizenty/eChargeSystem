@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
   <title>Micro-frontends using Web Components</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
 </head>
 <body onload="tellComponents()">
 <div class="container">
@@ -34,12 +35,15 @@
         </div>
       </div>
     </div>
+	<div class = "footerFixed">
+		<p>© 2019 Copyright: Gökhan Kahriman</p>
+	</div>
 	
 	<script>
     function tellComponents() {
 	
-      const reactEl = document.createElement('react-el');
-	  const reactElCreate = document.createElement('react-el-create');
+      const reactEl = document.createElement('chargingpoint-home');
+	  const reactElCreate = document.createElement('chargingpoint-create');
 
       const reactElContainer =  document.getElementById('react-container')
       if (reactElContainer.children.length > 0) {

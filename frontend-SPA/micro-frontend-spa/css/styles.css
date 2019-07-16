@@ -1,0 +1,12 @@
+@charset "ISO-8859-1";
+
+.footerFixed {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #eee;
+   color: black;
+   font-weight: bold;
+   text-align: center;
+}

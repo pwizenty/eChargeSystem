@@ -1,13 +1,13 @@
 import React from 'react';
 import {render, unmountComponentAtNode , ReactDOM} from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from './App'
+import App from './App';
+import Create from './Create';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import Create from './components/Create';
 import 'bootstrap/dist/css/bootstrap.css';
 import htmlToReact from 'html-to-react';
 
-class ReactElement extends HTMLElement {
+class ReactElement extends HTMLElement{
 
   constructor() {
     super();
@@ -18,9 +18,6 @@ class ReactElement extends HTMLElement {
   connectedCallback() {
     this._innerHTML = this.innerHTML;
     this.mount();
-    ReactDOM.render(<Router><div><Route exact path='/' component={App} /><Route path='/create' component={Create} /></div></Router>,
-      document.getElementById('root')
-    );
   }
 
   disconnectedCallback() {
@@ -38,6 +35,7 @@ class ReactElement extends HTMLElement {
       children: this.parseHtmlToReact(this.innerHTML)
     };
     render(<App {...props} />, this);
+    render(<Create {...props} />, this);
   }
 
   unmount() {
@@ -83,4 +81,3 @@ class ReactElement extends HTMLElement {
     };
   }
 }
-customElements.define('react-el', ReactElement);
