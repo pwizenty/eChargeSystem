@@ -5,8 +5,14 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #eee;
+   background-color: #baefc2;
    color: black;
    font-weight: bold;
    text-align: center;
+}
+
+.jumbotron {
+	margin-bottom: 30px;
+	color: inherit;
+	background-color: #baefc2;
 }

@@ -13,9 +13,9 @@
 				      <a class="navbar-brand" href="#">PACS</a>
 				    </div>
 				    <ul class="nav navbar-nav">
-				      <li class="active"><a href="http://localhost:8083/">UserManagement</a></li>
-				      <li><a href="http://localhost:8081/" target="_blank">ChargingPoint</a></li>
-				      <li><a href="http://localhost:8082/" target="_blank">Environment</a></li>
+				      <li class="active"><a href="http://localhost:8083/" class="opener">UserManagement</a></li>
+				      <li><a href="http://localhost:8081/" class="opener">ChargingPoint</a></li>
+				      <li><a href="http://localhost:8082/" class="opener">Environment</a></li>
 				    </ul>
 				  </div>
 				</nav>
@@ -34,12 +34,12 @@
     					<h2 th:case="null">Zurzeit sind keine Benutzer registriert!</h2>
 					        <div th:case="*">
 					            <h2>Benutzer</h2>
-					            <table>
-					                <thead>
+					            <table class="table table-bordered table-striped">
+					                <thead class="thead-dark">
 					                    <tr>
-					                        <th>Vorname</th>
-					                        <th>Nachname</th>
-					                        <th>E-Mail</th>
+					                        <th scope="col">Vorname</th>
+					                        <th scope="col">Nachname</th>
+					                        <th scope="col">E-Mail</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
@@ -58,5 +58,25 @@
 			</div>
 			
 		</div>
+		
+		<script type="text/javascript">
+		window.onload = function(){
+			  var a = document.querySelectorAll('.opener'), w = [], url, i;
+			  for(i = 0; i < a.length; i++){
+			    (function(i){
+			      a[i].onclick = function(e) {
+			        if (!w[i] || w[i].closed) {
+			          url = this.href;
+			          w[i] = window.open(url);
+			        } else {
+			          console.log('window ' + url + ' is already opened');
+			        }
+			        e.preventDefault();
+			        w[i].focus();
+			      };
+			    })(i);
+			  }
+			};
+		</script>
 	</body>
 </html>

@@ -5,21 +5,6 @@
 	</head>
 	<body>
 		<div class="container">
-		
-			<div class="row">
-				<nav class="navbar navbar-default">
-				  <div class="container-fluid">
-				    <div class="navbar-header">
-				      <a class="navbar-brand" href="#">PACS</a>
-				    </div>
-				    <ul class="nav navbar-nav">
-				      <li><a href="http://localhost:8083/" target="_blank">UserManagement</a></li>
-				      <li class="active"><a href="http://localhost:8081/">ChargingPoint</a></li>
-				      <li><a href="http://localhost:8082/" target="_blank">Environment</a></li>
-				    </ul>
-				  </div>
-				</nav>
-			</div>
 			<div class="row">
 				<div id ="chargingPointPageText">
 				<p>Sie befinden sich auf der Charging Point Seite</p>
@@ -33,14 +18,14 @@
     					<h2 th:case="null">Zurzeit sind keine Ladestationen vorhanden!</h2>
 					        <div th:case="*">
 					            <h2>Ladestationen</h2>
-					            <table>
-					                <thead>
+					            <table class="table table-bordered table-striped">
+					                <thead class="thead-dark">
 					                    <tr>
-					                        <th>Name</th>
-					                        <th>Besitzer</th>
-					                        <th>Straße</th>
-					                        <th>Hausnummer</th>
-					                        <th>Stadt</th>
+					                        <th scope="col">Name</th>
+					                        <th scope="col">Besitzer</th>
+					                        <th scope="col">Straße</th>
+					                        <th scope="col">Hausnummer</th>
+					                        <th scope="col">Stadt</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
@@ -60,5 +45,25 @@
 				</div>
 			</div>	
 		</div>
+		
+		<script type="text/javascript">
+		window.onload = function(){
+			  var a = document.querySelectorAll('.opener'), w = [], url, i;
+			  for(i = 0; i < a.length; i++){
+			    (function(i){
+			      a[i].onclick = function(e) {
+			        if (!w[i] || w[i].closed) {
+			          url = this.href;
+			          w[i] = window.open(url);
+			        } else {
+			          console.log('window ' + url + ' is already opened');
+			        }
+			        e.preventDefault();
+			        w[i].focus();
+			      };
+			    })(i);
+			  }
+			};
+		</script>
 	</body>
 </html>
