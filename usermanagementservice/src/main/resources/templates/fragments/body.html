@@ -13,7 +13,7 @@
 				      <a class="navbar-brand" href="#">PACS</a>
 				    </div>
 				    <ul class="nav navbar-nav">
-				      <li class="active"><a href="http://localhost:8083/" class="opener">UserManagement</a></li>
+				      <li class="active"><a href="#">UserManagement</a></li>
 				      <li><a href="http://localhost:8081/" class="opener">ChargingPoint</a></li>
 				      <li><a href="http://localhost:8082/" class="opener">Environment</a></li>
 				    </ul>
@@ -59,6 +59,9 @@
 			
 		</div>
 		
+		<!-- Implementierung, um zwischen vorhanden und aktiven Tabs zu wechseln, ohne neuen Tab im Browser öffnen zu müssen.
+		     Quelle: https://stackoverflow.com/questions/25661543/how-to-know-if-browser-tab-is-already-open-using-javascript
+		     Zuletzt zugegriffen am: 18.07.2019 -->
 		<script type="text/javascript">
 		window.onload = function(){
 			  var a = document.querySelectorAll('.opener'), w = [], url, i;
