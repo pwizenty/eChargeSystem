@@ -23,12 +23,12 @@
     					<h2 th:case="null">Zurzeit sind keine Benutzer registriert!</h2>
 					        <div th:case="*">
 					            <h2>Benutzer</h2>
-					            <table>
-					                <thead>
+					            <table class="table table-bordered table-striped">
+					                <thead class="thead-dark">
 					                    <tr>
-					                        <th>Vorname</th>
-					                        <th>Nachname</th>
-					                        <th>E-Mail</th>
+					                        <th scope="col">Vorname</th>
+					                        <th scope="col">Nachname</th>
+					                        <th scope="col">E-Mail</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
@@ -47,5 +47,28 @@
 			</div>
 			
 		</div>
+		
+		<!-- Implementierung, um zwischen vorhanden und aktiven Tabs zu wechseln, ohne neuen Tab im Browser öffnen zu müssen.
+	     Quelle: https://stackoverflow.com/questions/25661543/how-to-know-if-browser-tab-is-already-open-using-javascript
+	     Zuletzt zugegriffen am: 18.07.2019 -->
+		<script type="text/javascript">
+		window.onload = function(){
+			  var a = document.querySelectorAll('.opener'), w = [], url, i;
+			  for(i = 0; i < a.length; i++){
+			    (function(i){
+			      a[i].onclick = function(e) {
+			        if (!w[i] || w[i].closed) {
+			          url = this.href;
+			          w[i] = window.open(url);
+			        } else {
+			          console.log('window ' + url + ' is already opened');
+			        }
+			        e.preventDefault();
+			        w[i].focus();
+			      };
+			    })(i);
+			  }
+			};
+		</script>
 	</body>
 </html>

@@ -40,9 +40,9 @@ func Navbar(w http.ResponseWriter, req *http.Request) {
 				  <a class="navbar-brand" href="#">PACS - ESI</a>
 				</div>
 				<ul class="nav navbar-nav">
-				  <li class="active"><a href="http://localhost:8080/">UserManagement</a></li>
-				  <li><a href="http://localhost:8081/" target="_blank">ChargingPoint</a></li>
-				  <li><a href="http://localhost:8082/" target="_blank">Environment</a></li>
+				  <li class="active"><a href="#">UserManagement</a></li>
+				  <li><a href="http://localhost:8081/" class="opener">ChargingPoint</a></li>
+				  <li><a href="http://localhost:8082/" class="opener">Environment</a></li>
 				</ul>
 			  </div>
 			</nav>`)
