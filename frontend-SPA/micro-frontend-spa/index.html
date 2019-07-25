@@ -52,15 +52,13 @@
       reactElContainer.appendChild(reactEl);
 	  reactElContainer.appendChild(reactElCreate);
 
-	  const ngElList = document.createElement('ng-el-list');
-	  const ngElForm = document.createElement('ng-el-form');
+	  const ngElUserRegistration = document.createElement('ng-el-userregister');
 
       const ngElContainer =  document.getElementById('ng-container')
       if (ngElContainer.children.length > 0) {
         ngElContainer.removeChild(ngElContainer.children[0]);
       }
-	  ngElContainer.appendChild(ngElList);
-	  ngElContainer.appendChild(ngElForm);
+	  ngElContainer.appendChild(ngElUserRegistration);
 
     }
   </script>

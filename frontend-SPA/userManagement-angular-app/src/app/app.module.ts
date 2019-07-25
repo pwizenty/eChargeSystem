@@ -25,8 +25,8 @@ import { UserService } from './service/user-service';
   providers: [UserService],
   bootstrap: [],  entryComponents: [
     AppComponent,
-    UserListComponent,
-    UserFormComponent  ]
+    UserFormComponent,
+    UserListComponent]
 })
 export class AppModule { 
 
@@ -36,14 +36,8 @@ export class AppModule {
 
     const { injector } = this;
 
-        // create custom elements from angular components
-        const ngCustomUserListComponent = createCustomElement(UserListComponent, {injector});
-        const ngUserFormComponent = createCustomElement(UserFormComponent, {injector});
-
-
-        // define in browser registry
-        customElements.define('ng-el-list', ngCustomUserListComponent);
-        customElements.define('ng-el-form', ngUserFormComponent);
+        const ngUserRegisterComponent = createCustomElement(AppComponent, {injector});
+        customElements.define('ng-el-userregister', ngUserRegisterComponent);
 
   }
 }
