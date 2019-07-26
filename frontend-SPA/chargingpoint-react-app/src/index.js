@@ -1,11 +1,9 @@
 import React from 'react';
 import {render, unmountComponentAtNode , ReactDOM} from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from './App';
-import Create from './Create';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import htmlToReact from 'html-to-react';
+import Wrapper from './Wrapper';
 
 class ReactElement extends HTMLElement{
 
@@ -34,8 +32,7 @@ class ReactElement extends HTMLElement{
       ...this.getProps(this.attributes),
       children: this.parseHtmlToReact(this.innerHTML)
     };
-    render(<App {...props} />, this);
-    render(<Create {...props} />, this);
+    render(<Wrapper {...props} />, this);
   }
 
   unmount() {

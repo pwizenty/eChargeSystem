@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Button } from 'reactstrap';
-import ReactWebComponent from 'react-web-component';
-import Create from './Create';
 
-class App extends React.Component {
+class List extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,8 +28,7 @@ class App extends React.Component {
         'Content-Type': 'application/json'
       }
     }).then(() => {
-      let updatedChargingPoints = [...this.state.chargingPoints].filter(i => i.id !== id);
-      this.setState({chargingPoints: updatedChargingPoints});
+      this.props.removeChargingPoints(id)
     });
   }
 
@@ -39,8 +36,8 @@ class App extends React.Component {
     return (
       <div id="homePage">
 
-        <div className="jumbotron text-center" >
-          <h4>PACS - Charging Point</h4>
+        <div className="jumbotron text-center">
+          <h4>Charging-Point-Service</h4>
         </div>
 
         <div className="container">
@@ -63,7 +60,7 @@ class App extends React.Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {this.state.chargingPoints.map(c =>
+                  {this.props.chargingPoints.map(c =>
                     <tr>
                       <td>{c.name}</td>
                       <td>{c.ownerid}</td>
@@ -82,5 +79,4 @@ class App extends React.Component {
     );
   }
 }
-ReactWebComponent.create(<App />, 'chargingpoint-home');
-export default App;
+export default List;

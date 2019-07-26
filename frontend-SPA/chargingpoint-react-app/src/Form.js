@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ReactWebComponent from 'react-web-component';
 
-class Create extends React.Component {
-  constructor() {
-    super();
+class Form extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       ownerid: ''
@@ -22,14 +21,7 @@ class Create extends React.Component {
     const { name, ownerid} = this.state;
 
     axios.post('http://localhost:8081/chargingPoints', { name, ownerid})
-    .then(() => this.setState(() => ({
-    })))
-
-    this.refreshPage();
-  }
-
-  refreshPage(){
-    window.location.reload();
+    .then(() => this.setState(() => this.props.getData()))
   }
 
   render() {
@@ -63,5 +55,4 @@ class Create extends React.Component {
     );
   }
 }
-ReactWebComponent.create(<Create />, 'chargingpoint-create');
-export default Create;
+export default Form;
