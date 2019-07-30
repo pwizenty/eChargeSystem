@@ -37,7 +37,7 @@ export class AppModule {
     const { injector } = this;
 
         const ngUserRegisterComponent = createCustomElement(AppComponent, {injector});
-        customElements.define('ng-el-userregister', ngUserRegisterComponent);
+        customElements.define('user-management-service', ngUserRegisterComponent);
 
   }
 }

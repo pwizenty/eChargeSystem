@@ -48,7 +48,7 @@
 	<script>
     function createMicroFrontends() {
 	
-	  const reactElCreate = document.createElement('chargingpoint-create');
+	  const reactElCreate = document.createElement('chargingpoint-service');
 
       const reactElContainer =  document.getElementById('react-container')
       if (reactElContainer.children.length > 0) {
@@ -56,7 +56,7 @@
       }
 	  reactElContainer.appendChild(reactElCreate);
 
-	  const ngElUserRegistration = document.createElement('ng-el-userregister');
+	  const ngElUserRegistration = document.createElement('user-management-service');
 
       const ngElContainer =  document.getElementById('ng-container')
       if (ngElContainer.children.length > 0) {

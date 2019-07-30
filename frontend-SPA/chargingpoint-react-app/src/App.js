@@ -1,10 +1,9 @@
 import React from 'react';
 import List from "./List";
 import Form from "./Form";
-import ReactWebComponent from 'react-web-component';
 import axios from 'axios';
 
-class Wrapper extends React.Component{
+class App extends React.Component{
 
     constructor(){
         super();
@@ -36,5 +35,4 @@ class Wrapper extends React.Component{
         );
     }
 }
-ReactWebComponent.create(<Wrapper />, 'chargingpoint-create');
-export default Wrapper;
+export default App;

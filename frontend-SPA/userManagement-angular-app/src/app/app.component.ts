@@ -1,10 +1,11 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { User } from './model/user';
 import { UserService } from './service/user-service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
