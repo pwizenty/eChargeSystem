@@ -27,7 +27,7 @@ class App extends React.Component{
     
     render(){
         return(
-        <div id ="wrapperComponent">
+        <div id ="chargingPoint">
             <List getData={this.getData} chargingPoints={this.state.chargingPoints}
                  removeChargingPoints = {this.removeChargingPoints}/>
             <Form getData={this.getData}/>

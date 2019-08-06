@@ -34,7 +34,7 @@ class List extends React.Component {
 
   render() {
     return (
-      <div id="homePage">
+      <div id="chargingPointList">
 
         <div className="jumbotron text-center">
           <h4>Charging-Point-Service</h4>

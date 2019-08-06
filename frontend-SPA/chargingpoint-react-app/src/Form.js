@@ -28,7 +28,7 @@ class Form extends React.Component {
     const { name, ownerid} = this.state;
 
     return (
-      <div id="createComplete">
+      <div id="chargingPointForm">
       <div className="container">
         <div className="panel panel-default">
           <div className="panel-heading">
