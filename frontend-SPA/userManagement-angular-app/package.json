@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && serve -l 5001 dist/user-management-angular-app",
+    "start": "npm run build && serve -l 5001 dist/userManagement-angular-app",
     "build": "ng build --prod --output-hashing none --single-bundle true",
     "test": "ng test",
     "lint": "ng lint",
