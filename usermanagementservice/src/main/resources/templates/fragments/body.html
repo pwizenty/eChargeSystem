@@ -6,6 +6,8 @@
 	<body>
 		<div class="container">
 		
+		<!-- Navigationsleiste ist durch esi-Tag ersetzt worden. Die Navigationsleiste wird mit Hilfe des Webcache Varnish integriert
+		und bietet dann die Möglichkeit, die beiden anderen Frontends der Microservices zu erreichen. -->
 			<div class="row">
 				<esi:include src="/common/navbar-1.0" />
 			</div>
@@ -17,6 +19,7 @@
 				</div>
 			</div>
 			
+			<!-- Liste der angelegten Benutzer werden angezeigt und außerdem können diese wieder gelöscht werden. -->
 			<div class="row">
 				<div id="createUser">
 					<div th:switch="${users}">

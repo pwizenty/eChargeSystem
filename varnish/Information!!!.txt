@@ -1,0 +1,3 @@
+Die Umsetzung des Webcache-Varnish orientiert sich nach der Implementierung von Eberhard Wolff.
+Die Quellcodes sind unter dem Link https://github.com/ewolff/SCS-ESI aufrufbar.
+Die Konfiguration des Webache-Varnish in der default.vcl wurde projektspezifisch angepasst.

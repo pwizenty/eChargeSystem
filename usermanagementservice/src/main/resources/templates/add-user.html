@@ -14,6 +14,7 @@
 		<div th:replace="fragments/header :: header-register"></div>
 		
 		<div class="container">
+		<!-- Formular, um einen neuen Benutzer zu registrieren. -->
 		<div class="row">
 		<form action="#" th:action="@{/users/createUser}" th:object="${user}" method="post">
 		    <label for="name">Vorname</label>

@@ -15,7 +15,7 @@ func main() {
 	fmt.Println("Starting up on 8180")
 	log.Fatal(http.ListenAndServe(":8180", nil))
 }
-
+// Funktion beinhaltet die Informationen bzgl. der HTML-Seite.
 func Header(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, `
 		<meta charset="UTF-8">
@@ -26,7 +26,7 @@ func Header(w http.ResponseWriter, req *http.Request) {
 		<title>PACS - User</title>
         `)
 }
-
+// Funktion liefert das Titel der Startseite
 func TitlePacs(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, `
 			<div class="jumbotron text-center">
@@ -34,7 +34,7 @@ func TitlePacs(w http.ResponseWriter, req *http.Request) {
 				<h3>Included with ESI</h3>
 			</div>`)
 }
-
+// Funktion liefert die Navigationsleiste User-Management-Frontends.
 func Navbar(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, `
 			<nav class="navbar navbar-default">
@@ -50,7 +50,7 @@ func Navbar(w http.ResponseWriter, req *http.Request) {
 			  </div>
 			</nav>`)
 }
-
+// Funktion liefert das footer-Element für die Startseite.
 func Footer(w http.ResponseWriter, req *http.Request) {
 	fmt.Fprintln(w, `
 				<p>© 2019 Copyright: Gökhan Kahriman - ESI</p>`)

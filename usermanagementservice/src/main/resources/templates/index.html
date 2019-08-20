@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+	<!-- Informationen bzgl. der HTML-Seite wurden ersetzt durch esi-Tag. Diese Informationen werden mit Hilfe des Webcache Varnish durch
+	richtige Informationen serverseitig integriert.-->
 	<head>
 		<esi:include src="/common/header-1.0" />
 		<link rel="stylesheet" th:href="@{/css/styles.css}"/>
 	</head>
 	
+	<!-- Titel der Startseite ist durch esi-Tag ersetzt worden.
+	Titel wird mit Hilfe Webcache Varnish serverseitig integriert. -->
 	<body>
 		<esi:include src="/common/titlepacs-1.0" />
 		<div th:replace="fragments/body :: body"></div>

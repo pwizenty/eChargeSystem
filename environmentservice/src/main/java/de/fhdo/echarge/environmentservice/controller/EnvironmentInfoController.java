@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import de.fhdo.echarge.environmentservice.entity.EnvironmentInfo;
 import de.fhdo.echarge.environmentservice.repository.EnvironmentInfoRepository;
-
+/**
+ * Controller-Bean für das Frontend des Environment-Service,
+ * um Umweltinformationen anzulegen, zu lesen und zu löschen.
+ * @author kahriman
+ *
+ */
 @Controller
 @RequestMapping("/environmentInfos/")
 public class EnvironmentInfoController {

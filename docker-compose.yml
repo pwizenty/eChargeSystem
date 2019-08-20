@@ -32,5 +32,7 @@ services:
         links:
         - user-management
         - common
-        
+# YAML-Datei für das Starten der Ausführungsumgebung für die Microservices. Enthält zwei weitere Services. Common-Service stellt eine GO-Anwendung
+# bereit, die beim Aufruf bestimmter URL´s Funktionen aufruft und HTML-Fragmente bereitstellt. Service varnish dient als ESI-Implementierung. Webcache 
+# wertet esi-Tags aus HTML-Dokument aus und ersetzt diese mit HTML-Fragmenten aus dem common-Service. 
         

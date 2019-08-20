@@ -12,7 +12,7 @@
 	
 	<body>
 		<div th:replace="fragments/header :: header-chargingPointRegister"></div>
-		
+		<!-- Formular, um Ladestation hinzufügen zu können. -->
 		<div class="container">
 			<div class="row">
 				<form action="#" th:action="@{/chargingPoints/createChargingPoint}" th:object="${chargingPoint}" method="post">

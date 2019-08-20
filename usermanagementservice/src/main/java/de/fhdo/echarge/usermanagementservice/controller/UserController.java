@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import de.fhdo.echarge.usermanagementservice.entity.User;
 import de.fhdo.echarge.usermanagementservice.repository.UserRepository;
-
+/**
+ * Controller-Bean für das User-Management-Service, um Benutzer zu registrieren, anzuzeigen und zu löschen.
+ * @author kahriman
+ *
+ */
 @Controller
 @RequestMapping("/users/")
 public class UserController {

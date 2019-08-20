@@ -1,0 +1,3 @@
+Das Common-Service orientiert sich an der Implementierung von Eberhard Wolff.
+Die Quelle für die Sourcecodes sind unter dem Link : https://github.com/ewolff/SCS-ESI aufrufbar.
+Die Go-Anwendung wurde für das User-Management-Service projektspezifisch angepasst.

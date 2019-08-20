@@ -12,7 +12,8 @@
 				<p>Bitte ergänzen Sie die Umweltinformationen</p>
 				</div>
 			</div>
-			
+			<!-- Gespeicherte Umweltinformationen werden in einer Tabelle angezeigt, außerdem kann
+			diese Information wieder gelöscht werden. -->
 			<div class="row">
 				<div id="createEnvironmentInfo">
 					<div th:switch="${environmentInfos}">
@@ -22,12 +23,14 @@
 					            <table class="table table-bordered table-striped">
 					                <thead class="thead-dark">
 					                    <tr>
+					                    	<th scope="col">Beschreibung</th>
 					                        <th scope="col">SensorId</th>
 					                        <th scope="col">SensorType</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
 					                <tr th:each="environmentInfo : ${environmentInfos}">
+					                	<td th:text="${environmentInfo.description}"></td>
 					                    <td th:text="${environmentInfo.sensorId}"></td>
 					                    <td th:text="${environmentInfo.sensorType}"></td>
 				                     	<td><a th:href="@{/environmentInfos/delete/{id}(id=${environmentInfo.id})}">Umweltinformation löschen</a></td>
