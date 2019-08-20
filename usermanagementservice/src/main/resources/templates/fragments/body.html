@@ -6,6 +6,8 @@
 	<body>
 		<div class="container">
 		
+		<!-- Navigationsleiste für die Frontend-Integration definiert. Durch einen Klick auf die Hyperlinks lassen sich
+		die Frontends der beiden anderen Microservices sich erreichen. -->
 			<div class="row">
 				<nav class="navbar navbar-default">
 				  <div class="container-fluid">
@@ -27,7 +29,7 @@
 				<p>Damit Sie das System nutzen können, müssen Sie sich im System registrieren.</p>
 				</div>
 			</div>
-			
+			<!-- Tabelle zeigt die angelegten Benutzer an und bietet die Möglichkeit diese zu löschen. -->
 			<div class="row">
 				<div id="createUser">
 					<div th:switch="${users}">

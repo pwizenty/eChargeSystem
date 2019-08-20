@@ -24,4 +24,7 @@ services:
         links:
         - mongo-db
         
+# YAML-Datei ist verantwortlich für das Starten der Ausführungsumgebung. 3 Container werden für die Microservices 
+# gestartet und ein weiterer Container für die Datenbank. Die Microservices werden jeweils mit der Datenbank verlinkt
+        
         

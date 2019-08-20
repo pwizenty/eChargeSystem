@@ -9,16 +9,18 @@ import java.util.List;
 public class EnvironmentInfo {
     @Id
     private String id;
+    private String description;
     private int sensorId;
     private SENSORTYPE sensorType;
-    private List<SensorData> sensorDataHistory;
+    private SensorData sensorDataHistory;
 
     public EnvironmentInfo() {
     }
 
-    public EnvironmentInfo(int sensorId,
+    public EnvironmentInfo(String description, int sensorId,
                            SENSORTYPE sensorType,
-                           List<SensorData> sensorDataHistory) {
+                           SensorData sensorDataHistory) {
+    	this.description = description;
         this.sensorId = sensorId;
         this.sensorType = sensorType;
         this.sensorDataHistory = sensorDataHistory;
@@ -48,12 +50,12 @@ public class EnvironmentInfo {
         this.sensorType = sensorType;
     }
 
-    public List<SensorData> getSensorDataHistory() {
+    public SensorData getSensorDataHistory() {
         return sensorDataHistory;
     }
 
     public void setSensorDataHistory(
-            List<SensorData> sensorDataHistory) {
+            SensorData sensorDataHistory) {
         this.sensorDataHistory = sensorDataHistory;
     }
 
@@ -66,4 +68,12 @@ public class EnvironmentInfo {
                 + ", sensorDataHistory=" + sensorDataHistory
                 + '}';
     }
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

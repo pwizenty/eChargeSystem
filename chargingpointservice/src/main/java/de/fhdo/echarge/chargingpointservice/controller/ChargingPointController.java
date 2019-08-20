@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import de.fhdo.echarge.chargingpointservice.entity.ChargingPoint;
 import de.fhdo.echarge.chargingpointservice.repository.ChargingPointRepository;
-
+/**
+ * Controller-Bean für das Frontend des Charging-Point-Services erstellt,
+ * damit Ladestationen hinzugefügt, gelesen und gelöscht werden können.
+ * @author kahriman
+ *
+ */
 @Controller
 @RequestMapping("/chargingPoints/")
 public class ChargingPointController {

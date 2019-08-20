@@ -15,7 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import de.fhdo.echarge.usermanagementservice.entity.User;
 import de.fhdo.echarge.usermanagementservice.repository.UserRepository;
-
+/**
+ * Controller-Bean für das Frontend des User-Management-Service erstellt,
+ * um Benutzer für das PACS registrieren zu können.
+ * @author kahriman
+ *
+ */
 @Controller
 @RequestMapping("/users/")
 public class UserController {

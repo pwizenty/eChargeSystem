@@ -12,10 +12,12 @@
 	
 	<body>
 		<div th:replace="fragments/header :: header-environmentInfoRegister"></div>
-		
+		<!-- Formular, um eine Umweltinformation erfassen zu können. -->
 		<div class="container">
 			<div class="row">
 				<form action="#" th:action="@{/environmentInfos/createEnvironmentInfo}" th:object="${environmentInfo}" method="post">
+				    <label for="description">Beschreibung</label>
+				    <input type="text" th:field="*{description}" id="description" placeholder="Beschreibung">
 				    <label for="sensor">SensorId</label>
 				    <input type="number" th:field="*{sensorId}" id="sensor" placeholder="1">
 				    <label for ="sensorType">Sensor-Typ</label>
