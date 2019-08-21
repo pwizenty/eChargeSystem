@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-
+/*
+ Form-Klasse rendert das Formular, um eine Ladestation anlegen zu können. Das Speichern der Ladestation wird
+ in der onSubmit-Methode definiert.
+ */
 class Form extends React.Component {
   constructor(props) {
     super(props);

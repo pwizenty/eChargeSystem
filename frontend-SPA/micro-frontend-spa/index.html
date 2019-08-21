@@ -7,6 +7,9 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
 </head>
+<!--Micro Frontend, das die beiden Frontends der JS-Anwendungen beinhaltet.
+Dafür wird beim Laden der Seite, die Skriptfunktion aufgerufen und in die logisch geteilten Bereiche
+die Frontends integriert.-->
 <body onload="createMicroFrontends()">
 <div class="container">
     <div class="row">
@@ -44,7 +47,8 @@
 	<div class = "footerFixed">
 		<p>© 2019 Copyright: Gökhan Kahriman</p>
 	</div>
-	
+  <!--Skriptfunktion ist verantwortlich dafür, die definierten Webkomponenten den richtigen
+  Containern zuzordnen.-->
 	<script>
     function createMicroFrontends() {
 	
@@ -66,10 +70,13 @@
 
     }
   </script>
-  
+  <!--Weitere Abhängigkeiten werden als Skripte inkludiert.-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+  <!--Skripte integrieren die beiden Server für die React und Angular-Anwendung.
+  Damit ist es möglich, die Webkomponenten, die als JS-Datei ausgeliefert werden im Micro Frontend zu integrieren.-->
   <script src="http://localhost:5001/main.js"></script>
   <script src="http://localhost:5002/main.js"></script>
 	
 </body>
+</html>

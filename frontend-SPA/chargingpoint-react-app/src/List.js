@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { Button } from 'reactstrap';
-
+/*
+List-Klasse stellt die angelegten Ladestationen in einer Tabelle dar. Des Weiteren ermöglicht es die angelegten Ladestationen 
+mit der Methode deleteChargingPoint(id) zu löschen.
+*/
 class List extends React.Component {
 
   constructor(props) {

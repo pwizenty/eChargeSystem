@@ -1,3 +1,6 @@
+/*
+User-Klasse mit notwendigen Attributen
+*/
 export class User {
 
     id:string;

@@ -2,7 +2,10 @@ import React from 'react';
 import List from "./List";
 import Form from "./Form";
 import axios from 'axios';
-
+/*
+Wrapper-Klasse kapselt die Liste und die Form. Definiert zusätzlich weitere Methoden, um angelegte Ladestationen abzufragen
+und dies auch zu löschen.
+*/
 class App extends React.Component{
 
     constructor(){

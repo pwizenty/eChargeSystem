@@ -1,7 +1,11 @@
 import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { User } from './model/user';
 import { UserService } from './service/user-service';
-
+/*
+App-Komponente dient als Wrapper für die User-List und User-Form-Komponente.
+Definiert Methoden wie ngOnit, damit in der init-Phase die Benutzer geladen werden und desweiteren
+Methoden um Benutzer zu löschen und zu speichern.
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

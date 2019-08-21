@@ -3,6 +3,10 @@ import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { HttpClient } from '@angular/common/http';
 
+/*
+User-Service-Klasse, baut die Verbindung zu dem Backend auf.
+Definiert zusätzlich Methoden, um Benutzer abzufragen, zu speichern und zu löschen.
+*/
 @Injectable()
 export class UserService {
 

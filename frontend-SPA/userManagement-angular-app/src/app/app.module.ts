@@ -9,7 +9,10 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user-service';
-
+/*
+AppModule-Klasse bootstrapt die Angular-Anwendung. Außerdem wird in der Klasse die Webkomponente 'user-management-service' erstellt,
+die für die Frontend-Integration notwendig ist.
+ */
 @NgModule({
   declarations: [
     AppComponent,

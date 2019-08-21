@@ -1,7 +1,10 @@
 import { Component, Output, Input, EventEmitter, OnInit } from '@angular/core';
 import { User } from '../model/user';
 import { UserService } from '../service/user-service';
-
+/*
+User-Form Komponente ist verantwortlich dafür, ein Formular für die Benutzerregistrierung
+bereitzustellen.
+*/
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
